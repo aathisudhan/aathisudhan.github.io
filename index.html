@@ -11,24 +11,64 @@
             margin: 0;
             padding: 20px;
             color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
         }
         header {
             background: #007BFF;
             color: white;
-            padding: 10px 0;
+            padding: 20px;
             text-align: center;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            animation: fadeIn 1s ease-in;
         }
         section {
             margin: 20px 0;
             padding: 20px;
             background: white;
-            border-radius: 5px;
+            border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        section.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
         footer {
             text-align: center;
             margin-top: 20px;
             font-size: 0.9em;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Button Styles */
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -37,13 +77,26 @@
         <h1>Welcome to My Profile</h1>
     </header>
 
-    <section>
+    <section id="about">
         <h2>About Me</h2>
         <p>Hello! I am a web developer with a passion for creating interactive and user-friendly websites. I love coding and learning new technologies.</p>
+        <button onclick="showAlert()">Click Me!</button>
     </section>
 
     <footer>
         <p>&copy; 2024 My Profile</p>
     </footer>
+
+    <script>
+        // Show section with animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const section = document.getElementById('about');
+            section.classList.add('visible');
+        });
+
+        function showAlert() {
+            alert("Hello! Thanks for visiting my profile.");
+        }
+    </script>
 </body>
 </html>
