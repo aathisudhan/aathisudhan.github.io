@@ -5,83 +5,61 @@
 }
 
 body {
+    overflow: hidden; /* Prevent scrollbars */
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.space-container {
+    position: relative;
+    width: 100vw;
     height: 100vh;
-    text-align: center;
+    background: black; /* Space background */
+    overflow: hidden; /* Hide overflow for stars */
 }
 
-.container {
-    background: #fff;
-    border-radius: 8px;
-    padding: 40px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in;
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite alternate;
 }
 
-h1 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 20px;
-    animation: zoomIn 0.6s forwards;
-}
-
-.typing-effect {
-    font-size: 1.2em;
-    color: #666;
-    display: inline-block;
-    overflow: hidden; /* Ensures the text "disappears" */
-    white-space: nowrap; /* Keeps the text on one line */
-    border-right: 4px solid #007bff; /* Typing cursor */
-    width: 0; /* Starts at 0 width */
-    animation: typing 3s steps(30, end) forwards; /* Typing animation */
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.pulse {
-    display: inline-block;
-    animation: pulse 1.5s infinite; /* Pulsing animation */
+.planet {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ffcc00 0%, #ff9900 100%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: float 5s ease-in-out infinite;
 }
 
 .loader {
-    border: 10px solid #f3f3f3; /* Light grey */
-    border-top: 10px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 2s linear infinite;
-    margin: 20px auto;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fade 2s infinite;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+/* Animations */
+@keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes float {
+    0% { transform: translate(-50%, -50%) translateY(0); }
+    50% { transform: translate(-50%, -50%) translateY(-20px); }
+    100% { transform: translate(-50%, -50%) translateY(0); }
 }
 
-@keyframes zoomIn {
-    from { transform: scale(0.5); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+@keyframes fade {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
 }
