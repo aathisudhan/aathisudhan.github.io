@@ -3,100 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-        header {
-            background: #007BFF;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 600px;
-            animation: fadeIn 1s ease-in;
-        }
-        section {
-            margin: 20px 0;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px;
-            transform: translateY(-20px);
-            opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        section.visible {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9em;
-            animation: fadeIn 1s ease-in;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        /* Button Styles */
-        button {
-            background: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Your Profile Website</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Profile</h1>
-    </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I am a web developer with a passion for creating interactive and user-friendly websites. I love coding and learning new technologies.</p>
-        <button onclick="showAlert()">Click Me!</button>
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome to My Profile</h1>
+        <p>Hello! I'm [Your Name], and I'm passionate about [Your Interests/Profession].</p>
+        <a href="#about" class="cta-button">Learn More About Me</a>
     </section>
 
-    <footer>
-        <p>&copy; 2024 My Profile</p>
-    </footer>
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="your-photo.jpg" alt="Your Photo" id="profile-photo">
+        <p>I'm a [Your Job Title/Field] with experience in [Your Skills/Expertise]. I enjoy [Your Hobbies/Interests].</p>
+        <p>Here is a brief timeline of my journey:</p>
+        <ul>
+            <li><strong>[Year]</strong>: [Milestone or Achievement]</li>
+            <li><strong>[Year]</strong>: [Milestone or Achievement]</li>
+            <li><strong>[Year]</strong>: [Milestone or Achievement]</li>
+        </ul>
+    </section>
 
-    <script>
-        // Show section with animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const section = document.getElementById('about');
-            section.classList.add('visible');
-        });
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2>Blog</h2>
+        <article>
+            <h3>Blog Post Title 1</h3>
+            <p>Posted on [Date]</p>
+            <p>This is a brief excerpt from my blog post. [You can summarize the content or give a preview here.]</p>
+            <a href="blog-post-1.html" class="read-more">Read More</a>
+        </article>
+        
+        <article>
+            <h3>Blog Post Title 2</h3>
+            <p>Posted on [Date]</p>
+            <p>This is a brief excerpt from my blog post. [You can summarize the content or give a preview here.]</p>
+            <a href="blog-post-2.html" class="read-more">Read More</a>
+        </article>
+        
+        <!-- Add more blog posts as needed -->
+    </section>
 
-        function showAlert() {
-            alert("Hello! Thanks for visiting my profile.");
-        }
-    </script>
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
