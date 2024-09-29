@@ -26,16 +26,28 @@ h1 {
     font-size: 2.5em;
     color: #333;
     margin-bottom: 20px;
+    animation: zoomIn 0.6s forwards;
 }
 
-p {
+.typing-effect {
     font-size: 1.2em;
     color: #666;
+    display: inline-block;
+    overflow: hidden; /* Ensures the text "disappears" */
+    white-space: nowrap; /* Keeps the text on one line */
+    border-right: 4px solid #007bff; /* Typing cursor */
+    width: 0; /* Starts at 0 width */
+    animation: typing 3s steps(30, end) forwards; /* Typing animation */
 }
 
 a {
     color: #007bff;
     text-decoration: none;
+}
+
+.pulse {
+    display: inline-block;
+    animation: pulse 1.5s infinite; /* Pulsing animation */
 }
 
 .loader {
@@ -56,4 +68,20 @@ a {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
