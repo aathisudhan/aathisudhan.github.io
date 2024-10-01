@@ -1,115 +1,134 @@
-/* General Reset */
+/* Resetting styles */
 body, html {
     margin: 0;
     padding: 0;
     overflow: hidden;
     font-family: 'Arial', sans-serif;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
+    background: #000; /* Black space background */
 }
 
-.sky {
+/* Space background with stars */
+.space {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom, #87CEEB, #FFFFFF);
-    perspective: 1000px;
     overflow: hidden;
 }
 
-/* Cloud Styling */
-.clouds {
+.stars, .stars-2 {
     position: absolute;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    background: radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 5px 5px;
+    z-index: 1;
+    animation: twinkle 5s linear infinite;
+}
+
+.stars-2 {
+    background-size: 3px 3px;
+    animation: twinkle 3s linear infinite;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* Planets */
+.planet {
+    position: absolute;
     border-radius: 50%;
-    opacity: 0.9;
-    filter: blur(2px);
-    animation: moveClouds 40s linear infinite, floatCloud 6s ease-in-out infinite;
+    background-color: #ff7f50; /* Coral planet */
+    animation: rotatePlanet infinite linear;
 }
 
-.cloud-1 {
-    width: 300px;
+.planet-1 {
+    width: 150px;
     height: 150px;
-    top: 20%;
-    left: -30%;
-    animation-duration: 25s, 6s;
-    transform-origin: 50% 50% -200px;
+    top: 30%;
+    left: 10%;
+    animation-duration: 30s;
+    background: radial-gradient(circle at 50% 50%, #ff7f50, #cd5c5c);
 }
 
-.cloud-2 {
-    width: 400px;
-    height: 200px;
-    top: 40%;
-    left: 110%;
-    animation-duration: 30s, 7s;
-    transform-origin: 50% 50% -250px;
-}
-
-.cloud-3 {
-    width: 350px;
-    height: 175px;
+.planet-2 {
+    width: 100px;
+    height: 100px;
     top: 60%;
-    left: -100%;
-    animation-duration: 35s, 6.5s;
-    transform-origin: 50% 50% -300px;
+    right: 10%;
+    animation-duration: 20s;
+    background: radial-gradient(circle at 50% 50%, #1e90ff, #4682b4);
 }
 
-.cloud-4 {
-    width: 280px;
-    height: 140px;
-    top: 80%;
-    left: 110%;
-    animation-duration: 40s, 7s;
-    transform-origin: 50% 50% -220px;
+@keyframes rotatePlanet {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-/* Cloud Animations */
-@keyframes moveClouds {
-    0% {
-        transform: translateX(-100%) rotateY(0deg);
-    }
-    100% {
-        transform: translateX(100%) rotateY(360deg);
-    }
-}
-
-@keyframes floatCloud {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(15px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-/* Loading Text Styling */
-.loading-text {
+/* Satellite orbiting */
+.satellite {
     position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    animation: orbit 10s linear infinite;
+}
+
+.orbit {
     top: 50%;
     left: 50%;
+    margin-left: -20px;
+    margin-top: -200px;
+}
+
+.satellite-2 {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: orbitReverse 8s linear infinite;
+}
+
+.orbit-reverse {
+    top: 70%;
+    left: 70%;
+    margin-left: -20px;
+    margin-top: -100px;
+}
+
+@keyframes orbit {
+    0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+
+@keyframes orbitReverse {
+    0% { transform: rotate(360deg) translateX(150px) rotate(0deg); }
+    100% { transform: rotate(0deg) translateX(150px) rotate(360deg); }
+}
+
+/* Loading text */
+.loading-text {
+    position: absolute;
+    top: 90%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2.5em;
+    font-size: 2em;
     color: #ffffff;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    animation: fadeText 2s infinite alternate;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    z-index: 3;
+    animation: pulseText 2s infinite alternate;
 }
 
-/* Text Fade Animation */
-@keyframes fadeText {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.5;
-    }
-}
-
-/* Cloud Hover Interaction */
-.clouds:hover {
-    transform: scale(1.1) rotateY(360deg);
-    transition: transform 0.5s ease-in-out;
+@keyframes pulseText {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
 }
