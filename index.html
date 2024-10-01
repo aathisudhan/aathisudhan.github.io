@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting to Home...</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Redirection Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="space-background">
-            <div class="stars"></div>
-            <div class="stars stars-2"></div>
-            <div class="stars stars-3"></div>
-            <div class="planet"></div>
-            <div class="spaceship"></div>
-            <div class="space-particles"></div>
-        </div>
+    <div class="headline">Traveling Through the Stars...</div>
 
-        <div class="content">
-            <h1>Get Ready for an Amazing Journey!</h1>
-            <p>Redirecting you to the next galaxy...</p>
-            <div class="countdown" id="countdown">5</div>
-        </div>
+    <!-- Loading bar -->
+    <div class="loading-bar">
+        <span class="loading-progress"></span>
+    </div>
+
+    <!-- Space elements -->
+    <div class="stars"></div>
+    <div class="nebula"></div>
+    <div class="asteroid asteroid1"></div>
+    <div class="asteroid asteroid2"></div>
+
+    <!-- Floating button -->
+    <div class="neon-button">
+        <button class="button-text" onclick="accelerateRedirection()">Warp Speed</button>
     </div>
 
     <script src="script.js"></script>
