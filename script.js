@@ -1,10 +1,4 @@
-// Optional JavaScript for interactivity
+// Optional for more interaction or random behaviors in future development.
 document.addEventListener('DOMContentLoaded', () => {
-    const clouds = document.querySelectorAll('.clouds');
-
-    // Randomize cloud speed slightly for a more natural effect
-    clouds.forEach((cloud) => {
-        const randomSpeed = Math.random() * 5 + 20; // Between 20s and 25s
-        cloud.style.animationDuration = `${randomSpeed}s, 7s`;
-    });
+    // Example: You can randomize planet sizes, speeds, etc.
 });
