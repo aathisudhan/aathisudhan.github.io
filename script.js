@@ -1,11 +1,10 @@
-const spaceContainer = document.querySelector('.space-container');
+// Optional JavaScript for interactivity
+document.addEventListener('DOMContentLoaded', () => {
+    const clouds = document.querySelectorAll('.clouds');
 
-// Create stars dynamically
-for (let i = 0; i < 100; i++) {
-    const star = document.createElement('div');
-    star.className = 'star';
-    star.style.top = Math.random() * 100 + 'vh'; // Random position on y-axis
-    star.style.left = Math.random() * 100 + 'vw'; // Random position on x-axis
-    star.style.animationDuration = Math.random() * 1.5 + 1 + 's'; // Random twinkle speed
-    spaceContainer.appendChild(star);
-}
+    // Randomize cloud speed slightly for a more natural effect
+    clouds.forEach((cloud) => {
+        const randomSpeed = Math.random() * 5 + 20; // Between 20s and 25s
+        cloud.style.animationDuration = `${randomSpeed}s, 7s`;
+    });
+});
