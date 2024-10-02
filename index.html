@@ -3,28 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirection Page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Redirecting...</title>
+    <style>
+        /* Page Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, gray, black);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* White container styling */
+        .container {
+            background-color: white;
+            color: black;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 90%;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Loading Animation */
+        .loading {
+            margin-top: 20px;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top-color: black;
+            animation: spin 1s infinite linear;
+        }
+
+        /* Keyframes for spinning */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Fade-in effect */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+    <script>
+        // JavaScript to handle the redirection after 5 seconds
+        setTimeout(function(){
+            window.location.href = "home.html";
+        }, 5000);
+    </script>
 </head>
 <body>
-    <div class="headline">Traveling Through the Stars...</div>
-
-    <!-- Loading bar -->
-    <div class="loading-bar">
-        <span class="loading-progress"></span>
+    <!-- Main container with the message and loading animation -->
+    <div class="container">
+        <h1>Redirecting to Home Page . . .</h1>
+        <div class="loading"></div>
     </div>
-
-    <!-- Space elements -->
-    <div class="stars"></div>
-    <div class="nebula"></div>
-    <div class="asteroid asteroid1"></div>
-    <div class="asteroid asteroid2"></div>
-
-    <!-- Floating button -->
-    <div class="neon-button">
-        <button class="button-text" onclick="accelerateRedirection()">Warp Speed</button>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
