@@ -6,42 +6,74 @@
     <meta name="author" content="AATHISUDHAN A">
     <meta name="description" content="Portfolio Website">
     <meta name="keywords" content="HTML, Portfolio, AI, Data Science">
-    <title>AS - Home</title>
+    <title>AS Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script defer src="script.js"></script>
 </head>
 <body>
+
     <nav>
         <div class="nav-container">
             <div class="nav-links">
                 <a onclick="showTab('home')">HOME</a>
                 <a onclick="showTab('about-me')">ABOUT ME</a>
                 <a onclick="showTab('projects')">PROJECTS</a>
-                <a onclick="showTab('blog')">BLOG</a>
             </div>
         </div>
         <a href="resume.pdf" class="resume-btn" target="_blank">Download Resume</a>
     </nav>
 
     <div id="home" class="content active">
-        <h1>HOME</h1>
+        <div class="home-wrapper">
+            <div class="home-container">
+                <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="home-text">
+                    <h1 class="name">AATHISUDHAN A</h1>
+                    <p class="tagline">On a Mission to Make the Digital World Safer</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="about-me" class="content">
-        <h1>ABOUT ME</h1>
+        <div class="about-layout">
+            
+            <!-- Left Container -->
+            <div class="about-box left">
+                <p style="font-size: 32px; color: #1d1f21; text-align: center; margin-top: 150px;">To be Updated!</p>
+            </div>
+
+            <!-- Right Container -->
+            <div class="right-container">
+
+                <!-- Right Top: Education -->
+                <div class="about-box top">
+                    <h2><span class="icon-box">🎓</span> Education</h2>
+                    <p><strong>Degree:</strong> B.Tech, AI & DS</p>
+                    <p><strong>Institution:</strong> Panimalar Engineering College, Chennai</p>
+                </div>
+
+                <!-- Right Bottom: Contact Info -->
+                <div class="about-box bottom">
+                    <h2><span class="icon-box">📞</span> Contact Info</h2>
+                    <p><strong>Phone:</strong> <a href="tel:+917010885804">+91 7010885804</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:aathisudhan.ai@gmail.com">aathisudhan.ai@gmail.com</a></p>
+                    <p><strong>Address:</strong> Tirunelveli, Tamil Nadu, India</p>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <div id="projects" class="content">
-        <h1>PROJECTS</h1>
-    </div>
-
-    <div id="blog" class="content">
-        <h1>BLOG</h1>
+        <!-- Projects Section -->
     </div>
 
     <footer>
         <p>© 2025 AATHISUDHAN A. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
+
