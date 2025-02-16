@@ -1,79 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+<head style="font-family: Arial, sans-serif;">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="AATHISUDHAN A">
     <meta name="description" content="Portfolio Website">
-    <meta name="keywords" content="HTML, Portfolio, AI, Data Science">
-    <title>AS Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <script defer src="script.js"></script>
-</head>
-<body>
+    <title>AS Portfolio</title>
 
-    <nav>
-        <div class="nav-container">
-            <div class="nav-links">
-                <a onclick="showTab('home')">HOME</a>
-                <a onclick="showTab('about-me')">ABOUT ME</a>
-                <a onclick="showTab('projects')">PROJECTS</a>
-            </div>
-        </div>
-        <a href="resume.pdf" class="resume-btn" target="_blank">Download Resume</a>
+    <style>
+        nav a:hover {
+            background-color: skyblue;
+            transform: scale(1.1);
+            border-radius: 0px;
+        }
+    </style>
+
+</head>
+
+<body style="margin: 0; padding: 0; text-align: center; overflow-x: hidden; 
+             background: linear-gradient(white, skyblue);
+             background-attachment: fixed;
+             background-size: cover;
+             background-repeat: no-repeat;">
+
+    <!-- Navigation Bar -->
+    <nav style="background-color: black; color: white; padding: 20px; position: fixed; top: 0; width: 100%;
+                display: flex; flex-direction: row; align-items: flex-start; flex-wrap: wrap; font-size: 16px;
+                font-family: 'Arial', sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
+                gap: 50px;">
+
+        <a href="about.html" target="contentFrame" 
+           style="color: white; text-decoration: none; padding: 10px 50px; transition: all .3s ease-in-out; margin-left: 50px;">
+            About
+        </a>
+
+        <a href="projects.html" target="contentFrame" 
+           style="color: white; text-decoration: none; padding: 10px 50px; transition: all .3s ease-in-out;">
+            Projects
+        </a>
+
     </nav>
 
-    <div id="home" class="content active">
-        <div class="home-wrapper">
-            <div class="home-container">
-                <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-                <div class="home-text">
-                    <h1 class="name">AATHISUDHAN A</h1>
-                    <p class="tagline">On a Mission to Make the Digital World Safer</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Main Content -->
+    <iframe name="contentFrame" src="about.html" 
+            style="position: absolute; top: 77px; left: 0; width: 100%; height: calc(100vh - 133px);
+                   border-top: 5px solid blue; border-bottom: 5px solid blue; border-left: none; border-right: none;">
+    </iframe>
 
-    <div id="about-me" class="content">
-        <div class="about-layout">
-            
-            <!-- Left Container -->
-            <div class="about-box left">
-                <p style="font-size: 32px; color: #1d1f21; text-align: center; margin-top: 150px;">To be Updated!</p>
-            </div>
+    <!-- Footer -->
+    <footer style="background-color: black; color: white; padding: 15px; position: fixed; bottom: 0; width: 100%;
+                   text-align: center; font-size: 14px; font-family: 'Arial', sans-serif; font-weight: bold;
+                   text-transform: uppercase; letter-spacing: 1px;">
 
-            <!-- Right Container -->
-            <div class="right-container">
+        <p style="margin: 0;">&copy; 2025 AATHISUDHAN A | All Rights Reserved</p>
 
-                <!-- Right Top: Education -->
-                <div class="about-box top">
-                    <h2><span class="icon-box">🎓</span> Education</h2>
-                    <p><strong>Degree:</strong> B.Tech, AI & DS</p>
-                    <p><strong>Institution:</strong> Panimalar Engineering College, Chennai</p>
-                </div>
-
-                <!-- Right Bottom: Contact Info -->
-                <div class="about-box bottom">
-                    <h2><span class="icon-box">📞</span> Contact Info</h2>
-                    <p><strong>Phone:</strong> <a href="tel:+917010885804">+91 7010885804</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:aathisudhan.ai@gmail.com">aathisudhan.ai@gmail.com</a></p>
-                    <p><strong>Address:</strong> Tirunelveli, Tamil Nadu, India</p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div id="projects" class="content">
-        <!-- Projects Section -->
-    </div>
-
-    <footer>
-        <p>© 2025 AATHISUDHAN A. All Rights Reserved.</p>
     </footer>
 
 </body>
-</html>
 
+</html>
