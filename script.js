@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Create the HTML structure for each project
                 const projectHTML = `
                     <div class="project-container">
-                        <img src="images/${image}" class="project-image" alt="${title} style="width: ${width}; height: ${height};">
+                        <img src="images/${image}" class="project-image" alt="${title}" style="width: ${width}; height: ${height};">
                         <div class="project-details">
                             <div class="project-title">${title}</div>
                             <p class="project-description">${description}</p>
