@@ -2,18 +2,20 @@
 <html lang="en">
 
 <head style="font-family: Arial, sans-serif;">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="AATHISUDHAN A">
-    <meta name="description" content="Portfolio Website">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>AS Portfolio</title>
+    <!-- Meta Information -->
+    <meta charset="UTF-8"> <!-- Defines character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper responsive scaling -->
+    <meta name="author" content="AATHISUDHAN A"> <!-- Specifies the author of the webpage -->
+    <meta name="description" content="Portfolio Website"> <!-- Brief description of the website -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon for the website -->
+    <title>AS Portfolio</title> <!-- Title of the webpage -->
 
     <style>
+        /* Navigation link hover effect */
         nav a:hover {
-            background-color: skyblue;
-            transform: scale(1.1);
-            border-radius: 0px;
+            background-color: skyblue; /* Changes background color on hover */
+            transform: scale(1.1); /* Slightly enlarges the link */
+            border-radius: 0px; /* No border rounding */
         }
     </style>
 
@@ -31,11 +33,13 @@
                 font-family: 'Arial', sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
                 gap: 50px;">
 
+        <!-- About Page Link -->
         <a href="about.html" target="contentFrame" 
            style="color: white; text-decoration: none; padding: 10px 50px; transition: all .3s ease-in-out; margin-left: 50px;">
             About
         </a>
 
+        <!-- Projects Page Link -->
         <a href="projects.html" target="contentFrame" 
            style="color: white; text-decoration: none; padding: 10px 50px; transition: all .3s ease-in-out;">
             Projects
@@ -43,13 +47,13 @@
 
     </nav>
 
-    <!-- Main Content -->
+    <!-- Main Content Frame -->
     <iframe name="contentFrame" src="about.html" 
             style="position: absolute; top: 77px; left: 0; width: 100%; height: calc(100vh - 133px);
                    border-top: 5px solid blue; border-bottom: 5px solid blue; border-left: none; border-right: none;">
     </iframe>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer style="background-color: black; color: white; padding: 15px; position: fixed; bottom: 0; width: 100%;
                    text-align: center; font-size: 14px; font-family: 'Arial', sans-serif; font-weight: bold;
                    text-transform: uppercase; letter-spacing: 1px;">
