@@ -25,11 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const date = values[2].trim(); // Upload date
                 const image = values[3].trim(); // Image URL for the project
+                const width = values[4].trim() || "auto"; // Get custom width or default to "auto"
+                const height = values[5].trim() || "auto"; // Get custom height or default to "auto"
 
                 // Create the HTML structure for each project
                 const projectHTML = `
                     <div class="project-container">
-                        <img src="images/${image}" class="project-image" alt="${title}">
+                        <img src="images/${image}" class="project-image" alt="${title} style="width: ${width}; height: ${height};">
                         <div class="project-details">
                             <div class="project-title">${title}</div>
                             <p class="project-description">${description}</p>
