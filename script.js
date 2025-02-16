@@ -14,10 +14,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (values.length < 4) return; // Skip if the row doesn't have enough values
 
                 // Extract individual project details from the CSV row
-                const title = values[0].trim();       // Project title
-                const description = values[1].trim().replace(/\\n/g, "<br>"); // Convert '\n' to line breaks
-                const date = values[2].trim();        // Upload date
-                const image = values[3].trim();       // Image URL for the project
+                const title = values[0].trim(); // Project title
+                let description = values[1].trim();
+
+                // Convert '\n' to HTML line breaks
+                description = description.replace(/\\n/g, "<br>");
+
+                // Convert *bold text* to <b>bold text</b>
+                description = description.replace(/\*(.*?)\*/g, "<b>$1</b>");
+
+                const date = values[2].trim(); // Upload date
+                const image = values[3].trim(); // Image URL for the project
 
                 // Create the HTML structure for each project
                 const projectHTML = `
