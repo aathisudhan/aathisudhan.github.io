@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Loop through each line in the CSV file (each project entry)
             lines.forEach(line => {
-                const values = line.split(","); // Split the line into individual values based on commas
+                const values = line.split("|"); // Split the line into individual values based on commas
                 
                 if (values.length < 4) return; // Skip if the row doesn't have enough values
 
