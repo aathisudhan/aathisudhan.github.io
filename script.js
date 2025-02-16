@@ -9,13 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Loop through each line in the CSV file (each project entry)
             lines.forEach(line => {
-                const values = line.split("|"); // Split the line into individual values based on commas
-                
+                const values = line.split("|"); // Split the line into individual values based on the delimiter
+
                 if (values.length < 4) return; // Skip if the row doesn't have enough values
 
                 // Extract individual project details from the CSV row
                 const title = values[0].trim();       // Project title
-                const description = values[1].trim(); // Project description
+                const description = values[1].trim().replace(/\\n/g, "<br>"); // Convert '\n' to line breaks
                 const date = values[2].trim();        // Upload date
                 const image = values[3].trim();       // Image URL for the project
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <img src="images/${image}" class="project-image" alt="${title}">
                         <div class="project-details">
                             <div class="project-title">${title}</div>
-                            <p>${description}</p>
+                            <p class="project-description">${description}</p>
                             <div class="project-date">Uploaded on ${date}</div>
                         </div>
                     </div>
