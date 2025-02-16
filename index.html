@@ -9,6 +9,25 @@
     <meta name="description" content="Portfolio Website"> <!-- Brief description of the website -->
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon for the website -->
     <title>AS Portfolio</title> <!-- Title of the webpage -->
+    <script>
+        function isDesktopView() {
+            return window.innerWidth >= 1024; // Check screen width (adjust as needed)
+        }
+
+        function isRealDesktop() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            return !/mobile|android|iphone|ipad|ipod|blackberry|opera mini|iemobile|wpdesktop/.test(userAgent);
+        }
+
+        function checkAccess() {
+            if (!isDesktopView() && !isRealDesktop()) {
+                document.body.innerHTML = "<h2 style='font-family: 'Arial', sans-serif; font-weight: bold; text-align:center; letter-spacing: 1px; color:red;'>This page is best viewed on a desktop.</h2>"; // Redirect or show a message
+            }
+        }
+
+        window.onload = checkAccess;
+        window.onresize = checkAccess; // Recheck on resize
+    </script>
 
     <style>
         /* Navigation link hover effect */
